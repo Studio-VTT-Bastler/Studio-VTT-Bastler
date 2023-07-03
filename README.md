@@ -3,7 +3,7 @@ Hallo und willkommen im Github Repository vom Studio VTT Bastler.
 Hier kannst du Issues für unsere Module erstellen. Wenn dir also Fehler auffallen oder du Verbesserungsvorschläge hast, lasst uns gerne ein Issue da.
 
 ## Wer sind wir?
-Wir sind ein Team aus Foundry-Bastlern, die sich zusammen finden, um VTT-Projekte umzusetzen. Der Fokus liegt primär auf DAS-Modulen, wobei wir nicht ausschließen auch andere Dinge umzusetzen.
+Wir sind ein Team aus Foundry-Bastlern, die sich zusammen finden, um VTT-Projekte umzusetzen. Der Fokus liegt primär auf DSA-Modulen, wobei wir nicht ausschließen auch andere Dinge umzusetzen.
 
 ### Das Kernteam
 Sir Gawain (malt in bunt und gibt kluge Ratschläge)  
