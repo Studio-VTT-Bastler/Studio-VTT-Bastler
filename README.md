@@ -1,4 +1,4 @@
-## Studio VTT Bastler
+![](images/Banner-Studio-VTT-Bastler.png)
 Hallo und willkommen im Github Repository vom Studio VTT Bastler.
 Hier kannst du Issues für unsere Module erstellen. Wenn dir also Fehler auffallen oder du Verbesserungsvorschläge hast, lasst uns gerne ein Issue da.
 
