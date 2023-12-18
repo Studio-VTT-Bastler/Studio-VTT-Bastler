@@ -4,5 +4,5 @@ Es kann direkt vom Kompendium aus mit einem Journal Entry genutzt werden.
 */
 const scene = game.scenes.get('SCENEID');
 if (scene !== null) {
-  scene.activate();
+  scene.view();
 }
