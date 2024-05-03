@@ -1,0 +1,100 @@
+<form id="join-game" class="flexrow {{world.system}} {{world.joinTheme}}" autocomplete="off">
+
+    {{!-- Add custom styles --}}
+    <style>
+        /* button.world-id zum einfärben der Buttons einzelner Welten */
+        /* für weitere Welten, Block kopieren und Welt-ID austauschen */
+        button.ohne-ehre {
+            background-color: #1c2b1c;
+            color: var(--color-light-2);
+        }
+
+        /* fügt DSA-Auge unterhalb des Logins ein, wenn die Welt DSA spielt */
+        form.dsa5.minimal::after {
+            content: "";
+            width: 150px;
+            height: 150px;
+            background: url(systems/dsa5/icons/categories/DSA-Auge-Spieler.webp) no-repeat;
+        }
+    </style>
+
+    <div class="column left flexcol">
+        <div class="app flexcol join-form">
+            <h2 class="divider">{{ localize "JOIN.HeaderJoin" }}</h2>
+            <div class="form-group">
+                <label class="icon" data-tooltip="{{ localize 'JOIN.SelectUser' }}"><i class="fas fa-user"></i></label>
+                <div class="form-fields">
+                    <select name="userid">
+                        <option value=""></option>
+                        {{#each users}}
+                        <option value="{{this.id}}" {{#if this.active}}disabled{{/if}}>{{this.name}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="icon"  data-tooltip="{{ localize 'JOIN.UserKey' }}"><i class="fas fa-key"></i></label>
+                <div class="form-fields">
+                    <input type="password" name="password" placeholder="{{ localize "USERS.AccessKey" }}"
+                    value="" autocomplete="off">
+                </div>
+            </div>
+            <footer class="form-footer">
+                <button type="button" name="join" class="bright {{world.id}}">
+                    <i class="fas fa-check"></i>
+                    <label>{{ localize "JOIN.HeaderJoin" }}</label>
+                </button>
+            </footer>
+        </div>
+
+        <div class="app flexcol game-details">
+            <h2 class="divider">{{ localize "JOIN.HeaderDetails" }}</h2>
+            <div class="form-group">
+                <label><i class="fas fa-clock"></i> {{ localize "JOIN.NextSession" }}<span id="next-tz">{{ nextTZ }}</span></label>
+                <div class="form-fields">
+                    <span>{{nextTime}}</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label><i class="fas fa-users"></i> {{ localize "JOIN.CurrentPlayers" }}</label>
+                <div class="form-fields current-players">
+                    <span class="count">{{ usersCurrent }}</span>
+                    <span class="sep">/</span>
+                    <span class="count">{{ usersMax }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="app flexcol return-setup">
+            <h2 class="divider">{{ localize "GAME.ReturnSetup" }}</h2>
+            {{#if isAdmin }}
+            <p>{{ localize "JOIN.AuthAdmin" }}</p>
+            {{else}}
+            <div class="form-group">
+                <label class="icon" data-tooltip="{{ localize 'SETUP.AdminPasswordLabel' }}">
+                    <i class="fas fa-key"></i>
+                </label>
+                <input type="password" name="adminPassword" value=""
+                       placeholder="{{ localize 'SETUP.AdminPasswordLabel' }}" autocomplete="current-password">
+            </div>
+            {{/if}}
+            <footer class="form-footer">
+                <button type="button" name="shutdown" class="bright {{world.id}}">
+                    <i class="fas fa-lock"></i>
+                    <label>{{ localize "GAME.ReturnSetup" }}</label>
+                </button>
+            </footer>
+        </div>
+    </div>
+
+    <div id="world-description" class="column right flexcol">
+        <article class="app">
+            <h2 class="divider">{{ localize "JOIN.HeaderWorld" }}</h2>
+            <div class="container">
+                <div class="scrollable">
+                    {{{ world.description }}}
+                </div>
+            </div>
+        </article>
+    </div>
+</form>
